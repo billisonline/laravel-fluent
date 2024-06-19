@@ -225,4 +225,14 @@ trait HasProperties
 
         return null;
     }
+
+    /**
+     * Fix access to email_verified_at column.
+     *
+     * @return bool
+     */
+    public function hasVerifiedEmail()
+    {
+        return !is_null($this->getAttribute('email_verified_at'));
+    }
 }
